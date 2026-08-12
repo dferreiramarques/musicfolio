@@ -1,107 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0a09">
 <title>David Marques — Music &amp; Sound</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
-<style>
-.collab-text p { font-size: 1.2rem; font-weight: 300; color: #a8a5a0; line-height: 1.9; margin-bottom: 1.1em; }
-.collab-text p:last-child { margin-bottom: 0; }
-.collab-list { list-style: none; margin: 28px 0 32px; padding: 0; display: flex; flex-direction: column; gap: 0; }
-.collab-list li { font-size: 1.0rem; color: var(--muted); font-style: italic; font-weight: 300; padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 16px; }
-.collab-list li::before { content: '—'; color: #2a2a28; flex-shrink: 0; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #080808; --border: #1c1c1c; --text: #cac8c2;
-  --muted: #484840; --accent: #c8b89a;
-  --font: 'Averia Serif Libre', Georgia, serif;
-}
-html { font-size: 17px; }
-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.75; -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 920px; margin: 0 auto; padding: 88px 32px 120px; }
-header { margin-bottom: 88px; }
-header h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 300; letter-spacing: -0.025em; color: #eeeae3; line-height: 1.05; margin-bottom: 4px; }
-header .subtitle { font-size: 0.88rem; color: var(--muted); font-weight: 300; letter-spacing: 0.06em; font-style: italic; }
-section { padding-top: 6px; border-top: 1px solid var(--border); }
-.label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; font-weight: 400; }
-
-/* Bio layout */
-.about-inner {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
-  align-items: start;
-  padding-bottom: 36px;
-}
-.about-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 4px;
-  filter: grayscale(30%) contrast(1.05);
-  opacity: 0.88;
-}
-.about-text p {
-  font-size: 1.2rem;
-  font-weight: 300;
-  color: #a8a5a0;
-  line-height: 1.9;
-  margin-bottom: 1.1em;
-}
-.about-text p:last-child { margin-bottom: 0; }
-.about-text .born {
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.4em;
-  font-style: normal;
-}
-
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: 14px; padding-bottom: 56px; }
-iframe { width: 100%; border: none; border-radius: 8px; display: block; }
-.spotify { height: 352px; }
-.bandcamp { height: 120px; }
-.credits { padding-bottom: 56px; }
-.credit-row { display: flex; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--border); }
-.credit-row:last-child { border-bottom: none; }
-.credit-alias { font-size: 0.88rem; font-weight: 400; color: var(--accent); width: 168px; flex-shrink: 0; }
-.credit-role { font-size: 0.82rem; color: var(--muted); font-weight: 300; font-style: italic; line-height: 1.5; }
-.archive-note { font-size: 0.88rem; color: var(--muted); font-style: italic; font-weight: 300; padding-bottom: 56px; }
-.contact-wrap { padding-bottom: 56px; }
-.contact-link { font-size: 0.92rem; color: var(--accent); text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid transparent; transition: border-color 0.2s ease; font-weight: 300; }
-.contact-link:hover { border-color: var(--accent); }
-footer { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border); font-size: 0.68rem; letter-spacing: 0.14em; color: #252520; text-transform: uppercase; }
-
-@media (max-width: 640px) {
-  .wrap { padding: 52px 20px 80px; }
-  header { margin-bottom: 60px; }
-  .about-inner { grid-template-columns: 1fr; gap: 28px; }
-  .about-photo { width: 140px; }
-  .grid { grid-template-columns: 1fr; }
-  .credit-alias { width: 128px; }
-  header h1 { font-size: 2rem; }
-}
-</style>
+<link rel="stylesheet" href="ds.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
-  <header>
+  <header class="hero">
     <h1>David Marques</h1>
-    <p class="subtitle">music, production &amp; artistic direction</p>
+    <p class="subtitle">Music, production &amp; artistic direction</p>
   </header>
 
-  <section>
-    <p class="label">About</p>
+  <section class="section">
+    <p class="eyebrow">About</p>
     <div class="about-inner">
       <img class="about-photo" src="photo.jpg" alt="David Marques">
       <div class="about-text">
-        <p class="born">b. 10 March 1980 &mdash; Porto, Portugal</p>
+        <span class="f-badge f-badge-neutral born-badge">b. 10 March 1980 · Porto, Portugal</span>
         <p>David Marques started making music in the early 2000s, when the distance between a four-track recorder and a stage felt like the only map worth following. What emerged wasn't a genre but a method: work with what the project demands, not what the format allows.</p>
         <p>Each alias carries its own logic. s0ma operates in dense electronic terrain; Zarhana folds the Portuguese guitar into something more unsettled; Megateddy anchors itself in rock with the patience of a band that has read Velvet Underground and decided not to rush. b1tn1k is the one-man-band taken seriously — no irony, just accountability.</p>
         <p>Across all of it, the throughline is less about instrument or style than about how sound is used: as structure, as atmosphere, as argument.</p>
@@ -110,80 +32,114 @@ footer { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--border
     </div>
   </section>
 
-  <section>
-    <p class="label">Selected Releases</p>
-    <div class="grid">
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/0blziwZbGtZ0LpkKOx4sJj?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/0hQ1iPMd0TESoOQiTojctx?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/29uCwRliUxMIcmcHfjTlSx?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/4xpm0lHLlGuCIKRNNpRHEs?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/1LNdQ6HUhIOYS3qVqQy1WF?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/1ZsvteKDQO6CJnhfkJRj6E?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/3tjrNkbY2goouGYhzmtYri?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/3V0viIueQbRQrtTgpnshdW?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/2adzXFuF4mlNF84mLCx3ou?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/3Ps6Chvlo2LgikDOk8QL5c?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <iframe class="spotify" src="https://open.spotify.com/embed/album/6Twf9uQiOyCZhlbVms8WLf?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <section class="section">
+    <p class="eyebrow">Selected Releases</p>
+    <div class="media-grid">
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/0blziwZbGtZ0LpkKOx4sJj?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/0hQ1iPMd0TESoOQiTojctx?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/29uCwRliUxMIcmcHfjTlSx?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/4xpm0lHLlGuCIKRNNpRHEs?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/1LNdQ6HUhIOYS3qVqQy1WF?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/1ZsvteKDQO6CJnhfkJRj6E?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/3tjrNkbY2goouGYhzmtYri?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/3V0viIueQbRQrtTgpnshdW?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/2adzXFuF4mlNF84mLCx3ou?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/3Ps6Chvlo2LgikDOk8QL5c?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="spotify" src="https://open.spotify.com/embed/album/6Twf9uQiOyCZhlbVms8WLf?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
     </div>
   </section>
 
-  <section>
-    <p class="label">Bandcamp</p>
-    <div class="grid">
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=234467988/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=929292017/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=1302722996/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=1585279741/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=281773370/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
-      <iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=981017379/size=large/bgcol=080808/linkcol=c8b89a/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe>
+  <section class="section">
+    <p class="eyebrow">Bandcamp</p>
+    <div class="media-grid">
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=234467988/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=929292017/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=1302722996/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=1585279741/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/track=281773370/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
+      <div class="f-card f-card-hover media-card"><iframe class="bandcamp" src="https://bandcamp.com/EmbeddedPlayer/album=981017379/size=large/bgcol=0a0a09/linkcol=c9a869/tracklist=false/artwork=small/transparent=true/" seamless loading="lazy"></iframe></div>
     </div>
   </section>
 
-  <section>
-    <p class="label">Projects &amp; Roles</p>
-    <div class="credits">
-      <div class="credit-row"><span class="credit-alias">s0ma</span><span class="credit-role">guitar, bass, synth, beatboxes, production</span></div>
-      <div class="credit-row"><span class="credit-alias">gohya</span><span class="credit-role">lead guitar</span></div>
-      <div class="credit-row"><span class="credit-alias">Os Colchetes</span><span class="credit-role">guitar</span></div>
-      <div class="credit-row"><span class="credit-alias">Fury! Gagarin</span><span class="credit-role">guitar, production</span></div>
-      <div class="credit-row"><span class="credit-alias">Overland Trio</span><span class="credit-role">guitar</span></div>
-      <div class="credit-row"><span class="credit-alias">payloaders</span><span class="credit-role">synth, beatboxes, production</span></div>
-      <div class="credit-row"><span class="credit-alias">b1tn1k</span><span class="credit-role">one-man-band</span></div>
-      <div class="credit-row"><span class="credit-alias">Megateddy</span><span class="credit-role">bass, production</span></div>
-      <div class="credit-row"><span class="credit-alias">Massuda</span><span class="credit-role">bass, production</span></div>
-      <div class="credit-row"><span class="credit-alias">Zarhana</span><span class="credit-role">guitar, Portuguese guitar, bass, synths, production</span></div>
+  <section class="section">
+    <p class="eyebrow">Projects &amp; Roles</p>
+    <div class="roster-grid">
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">S0</span><span class="roster-name">s0ma</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">guitar</span><span class="f-badge f-badge-neutral">bass</span><span class="f-badge f-badge-neutral">synth</span><span class="f-badge f-badge-neutral">beatboxes</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">GO</span><span class="roster-name">gohya</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">lead guitar</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">OC</span><span class="roster-name">Os Colchetes</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">guitar</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">FG</span><span class="roster-name">Fury! Gagarin</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">guitar</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">OT</span><span class="roster-name">Overland Trio</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">guitar</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">PL</span><span class="roster-name">payloaders</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">synth</span><span class="f-badge f-badge-neutral">beatboxes</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">B1</span><span class="roster-name">b1tn1k</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">one-man-band</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">MT</span><span class="roster-name">Megateddy</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">bass</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">MS</span><span class="roster-name">Massuda</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">bass</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
+      <div class="f-card roster-card">
+        <div class="roster-head"><span class="f-avatar">ZH</span><span class="roster-name">Zarhana</span></div>
+        <div class="roster-roles"><span class="f-badge f-badge-neutral">guitar</span><span class="f-badge f-badge-neutral">Portuguese guitar</span><span class="f-badge f-badge-neutral">bass</span><span class="f-badge f-badge-neutral">synths</span><span class="f-badge f-badge-neutral">production</span></div>
+      </div>
     </div>
   </section>
 
-  <section>
-    <p class="label">Archive — 2002–2006</p>
+  <section class="section">
+    <p class="eyebrow">Archive — 2002–2006</p>
     <p class="archive-note">Live performance and experimental recordings.</p>
   </section>
 
-  <section>
-  <p class="label">Collaborate</p>
-  <div class="collab-text">
-    <p>Open to hearing what you're working on — finished, half-formed, or just an idea with nowhere to go yet.</p>
-    <ul class="collab-list">
-      <li>listen to your music and talk about where it could go</li>
-      <li>define something new together, without a genre in mind</li>
-      <li>improvise — in a room, remotely, or somewhere in between</li>
-      <li>produce, arrange, or strip things back</li>
-      <li>build a live set for a specific moment, then dissolve it</li>
-    </ul>
-    <p>Not looking for a band. Looking for people who treat a project as a question worth asking — for as long as it takes to answer it.</p><br>
-  </div>
-</section>
+  <section class="section">
+    <p class="eyebrow">Collaborate</p>
+    <div class="collab-text">
+      <p>Open to hearing what you're working on — finished, half-formed, or just an idea with nowhere to go yet.</p>
+      <ul class="collab-list">
+        <li>Listen to your music and talk about where it could go</li>
+        <li>Define something new together, without a genre in mind</li>
+        <li>Improvise — in a room, remotely, or somewhere in between</li>
+        <li>Produce, arrange, or strip things back</li>
+        <li>Build a live set for a specific moment, then dissolve it</li>
+      </ul>
+      <p>Not looking for a band. Looking for people who treat a project as a question worth asking — for as long as it takes to answer it.</p>
+    </div>
+  </section>
 
-  <section>
-    <p class="label">Links</p>
+  <section class="section">
+    <p class="eyebrow">Links</p>
     <div class="contact-wrap">
-      <a class="contact-link" href="https://linktr.ee/b1tn1k" target="_blank" rel="noopener noreferrer">linktr.ee/b1tn1k</a>
+      <a class="f-btn f-btn-outline f-btn-lg f-btn-pill" href="https://linktr.ee/b1tn1k" target="_blank" rel="noopener noreferrer">
+        linktr.ee/b1tn1k
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
     </div>
   </section>
 
   <footer>David Marques &mdash; Music &amp; Sound</footer>
 
 </div>
+<script src="ds.js"></script>
 </body>
 </html>

@@ -1,0 +1,153 @@
+/* ==========================================================================
+   David Marques — site styles
+   Built on top of DM Design System (ds.css). Only overrides tokens and adds
+   page-specific layout — never redefines component internals.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;1,300&display=swap');
+
+/* ── Brand override: warm gold, per README "Custom brand colour" ───────── */
+/* ── Neutral override: near-black, kept from the previous identity ─────── */
+[data-theme="dark"] {
+  --f-brand:     #c9a869;
+  --f-brand-h:   #d8bc84;
+  --f-brand-a:   #b5924f;
+  --f-brand-bg:  #211b10;
+  --f-brand-bg2: rgba(201, 168, 105, .10);
+  --f-brand-fg:  #14110a;
+
+  --f-bg1: #0a0a09;
+  --f-bg2: #131210;
+  --f-bg3: #1c1a17;
+  --f-bg4: #262319;
+
+  --f-fg1: #f0ece3;
+  --f-fg2: #cac6bc;
+  --f-fg3: #8d887c;
+  --f-fg4: #57534a;
+
+  --f-stroke1: #29261f;
+  --f-stroke2: #1e1c17;
+}
+
+/* Wordmark face (Averia Serif Libre) is the one deliberate departure from
+   the system's Figtree — reserved for the artist's name only, below. */
+
+body {
+  background: var(--f-bg1);
+}
+
+.wrap { max-width: 880px; margin: 0 auto; padding: 96px 32px 100px; }
+
+/* ── Hero ────────────────────────────────────────────────────────────── */
+.hero { margin-bottom: 104px; }
+.hero h1 {
+  font-family: 'Averia Serif Libre', var(--f-font);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+  letter-spacing: -0.01em;
+  color: var(--f-fg1);
+  line-height: 1.05;
+  margin-bottom: var(--f-space-2);
+}
+.hero .subtitle {
+  font-size: var(--f-text-sm);
+  color: var(--f-fg3);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: var(--f-weight-medium);
+}
+
+/* ── Sections ────────────────────────────────────────────────────────── */
+.section { padding-top: var(--f-space-8); border-top: 1px solid var(--f-stroke2); margin-top: var(--f-space-8); }
+.section:first-of-type { margin-top: 0; }
+.eyebrow {
+  font-size: var(--f-text-xs);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--f-fg4);
+  font-weight: var(--f-weight-semibold);
+  margin-bottom: var(--f-space-8);
+}
+
+/* ── About ───────────────────────────────────────────────────────────── */
+.about-inner { display: grid; grid-template-columns: 192px 1fr; gap: var(--f-space-10); align-items: start; }
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--f-r8);
+  border: 1px solid var(--f-stroke1);
+  filter: grayscale(35%) contrast(1.05);
+  box-shadow: var(--f-shadow8);
+}
+.about-text p {
+  font-size: var(--f-text-md);
+  font-weight: var(--f-weight-light);
+  color: var(--f-fg2);
+  line-height: var(--f-leading-loose);
+  margin-bottom: 1.1em;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.born-badge { margin-bottom: var(--f-space-5); }
+
+/* ── Roster (Projects & Roles) — the signature element: each alias as a
+   small identity card with a monogram, not a plain text row ───────────── */
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--f-space-3);
+}
+.roster-card { padding: var(--f-space-4); }
+.roster-head { display: flex; align-items: center; gap: var(--f-space-3); margin-bottom: var(--f-space-3); }
+.roster-name { font-size: var(--f-text-md); font-weight: var(--f-weight-semibold); color: var(--f-fg1); }
+.roster-roles { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* ── Media grids (Releases / Bandcamp) ──────────────────────────────── */
+.media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(272px, 1fr)); gap: var(--f-space-3); }
+.media-card { padding: var(--f-space-2); }
+.media-card iframe { width: 100%; border: none; border-radius: var(--f-r4); display: block; }
+.media-card .spotify { height: 352px; }
+.media-card .bandcamp { height: 120px; }
+
+/* ── Archive ─────────────────────────────────────────────────────────── */
+.archive-note { font-size: var(--f-text-base); color: var(--f-fg3); font-weight: var(--f-weight-light); margin-top: var(--f-space-4); }
+
+/* ── Collaborate ─────────────────────────────────────────────────────── */
+.collab-text p { font-size: var(--f-text-md); font-weight: var(--f-weight-light); color: var(--f-fg2); line-height: var(--f-leading-loose); }
+.collab-list { list-style: none; margin: var(--f-space-6) 0 var(--f-space-8); padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.collab-list li {
+  font-size: var(--f-text-base);
+  color: var(--f-fg2);
+  font-weight: var(--f-weight-light);
+  padding: var(--f-space-3) 0 var(--f-space-3) var(--f-space-4);
+  border-left: 2px solid var(--f-stroke1);
+  transition: border-color var(--f-normal) var(--f-ease);
+}
+.collab-list li:hover { border-left-color: var(--f-brand); }
+
+/* ── Links / contact ─────────────────────────────────────────────────── */
+.contact-wrap { display: flex; }
+
+/* ── Footer ──────────────────────────────────────────────────────────── */
+footer {
+  margin-top: var(--f-space-16);
+  padding-top: var(--f-space-6);
+  border-top: 1px solid var(--f-stroke2);
+  font-size: var(--f-text-xs);
+  letter-spacing: .14em;
+  color: var(--f-fg4);
+  text-transform: uppercase;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .wrap { padding: 56px 20px 80px; }
+  .hero { margin-bottom: 64px; }
+  .about-inner { grid-template-columns: 1fr; gap: var(--f-space-6); }
+  .about-photo { width: 132px; }
+  .media-grid { grid-template-columns: 1fr; }
+  .roster-grid { grid-template-columns: 1fr; }
+}
